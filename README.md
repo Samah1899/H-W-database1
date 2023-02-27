@@ -48,14 +48,14 @@ create database store;
     created_at datetime
     );
     
-    ## DDL:
+    #DDL:
     
     alter table products add column created_at timestamp default now();
     alter table orders add column created_at timestamp default now();
     alter table users add column created_at timestamp default now();
     
     
-### DML:
+ #DML:
 
     insert into countries values (010,'Riadh','Asia');
     insert into users values (200,'samah Abdullah','samah@gmail.com','f','2000/3/4' ,'2023/27/2',010);
