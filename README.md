@@ -1,4 +1,9 @@
-#DDL:
+
+
+
+![store](https://user-images.githubusercontent.com/122470877/221504493-c6647a2d-4be4-44cc-8857-abec7ef2e0c7.png)
+
+#DDL
 
 create database store;
 
@@ -41,27 +46,28 @@ create database store;
 );
 
  create table products(
-    id int(10) primary key,
+    id int (10) primary key,
     name varchar(10) not null ,
     price int(10) default 0,
     status varchar(10) check ( status='valid' or status='expired' ),
     created_at datetime
     );
-    
-    #DDL:
-    
     alter table products add column created_at timestamp default now();
     alter table orders add column created_at timestamp default now();
     alter table users add column created_at timestamp default now();
-    
-    
- #DML:
+
+#DML
 
     insert into countries values (010,'Riadh','Asia');
-    insert into users values (200,'samah Abdullah','samah@gmail.com','f','2000/3/4' ,'2023/27/2',010);
-    insert into orders values (1,299,'start','2023/22/2');
-    insert into order_products values (19,23,4);
-    insert into products values (19,'laptop',5000,'expired','2023/1/1');
+    insert into users values (200,'samah Abdullah','samah@gmail.com','f','2000/3/4',now(),010);
+    insert into orders values (1,200,'start',now());
+    insert into order_products values (1,19,4);
+    insert into products values (19,'laptop',5000,'expired',now());
 
     update countries set continent_name='Africa' where code=010;
     delete from products where id=19;
+
+  select * from countries;
+  select * from products;
+  select * from users;
+  select * from orders;
